@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Notetaker</title>
+    <link href="https://fonts.googleapis.com/css?family=Merriweather|Poppins" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <link href="style.css" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+
+</head>
+
+<body class="container-fluid">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Notetaker</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </nav>
+
+<br />
+
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-3">
+          <div class="sideBar">
+              <div class="notesTab">Notes</div>
+              <div class="recipeBox">Recipe Box</div>
+            </div>
+        </div>
+        <div class="col-lg-9">
+          <div class="row toolBar">
+            <!--Undo-->                
+            <button class="textButton" onclick="underline()">
+              <i class="fas fa-undo"></i>
+            </button>
+            <!--Redo-->                
+            <button class="textButton" onclick="underline()">
+              <i class="fas fa-redo"></i>
+            </button>
+            <!--Bold-->                
+            <button class="textButton" onclick="underline()">
+              <i class="fas fa-bold"></i>
+            </button>
+            <!--Italics-->                
+            <button class="textButton" onclick="underline()">
+              <i class="fas fa-italic"></i>
+            </button>
+            <!--Underline-->                
+            <button class="textButton" onclick="underline()">
+              <i class="fas fa-underline"></i>
+            </button>
+            <!--Align Left-->                
+            <button class="textButton" onclick="underline()">
+              <i class="fas fa-align-left"></i>
+            </button>
+            <!--Align Center-->                
+            <button class="textButton" onclick="underline()">
+              <i class="fas fa-align-center"></i>
+            </button>
+            <!--Align Right-->                
+            <button class="textButton" onclick="underline()">
+              <i class="fas fa-align-right"></i>
+            </button>
+            <!--Link-->
+            <button class="textButton" onclick="link()">
+              <i class="fas fa-link"></i>
+            </button>
+            <!--Show HTML-->
+            <button class="textButton" onclick="displayhtml()">
+              <i class="fas fa-code"></i>
+            </button>
+            <!--Clear HTML-->
+            <button class="textButton" onclick="displayhtml()">
+              <i class="fas fa-times"></i>
+            </button>
+            <!--Toggle-->
+            <button onclick="toggleByClass('display');">Toggle</button>
+          </div>
+          <div class="row">
+              <textarea class="full-height display" placeholder="Write markdown text here..." id="pad"></textarea>
+              <div class="full-height display" id="markdown"></div>
+          </div>
+      </div>
+      </div>
+  </div>
+
+    <script src="https://cdn.rawgit.com/showdownjs/showdown/1.0.2/dist/showdown.min.js"></script>
+    <script src="/channel/bcsocket.js"></script>
+    <script src="/share/share.uncompressed.js"></script>
+    <script src="/share/textarea.js"></script>
+    <script src="script.js"></script>
+
+</body>
+</html>
