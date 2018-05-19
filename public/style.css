@@ -135,6 +135,10 @@ html, body, section, .full-height {
   display: none;
 }
 
+.fileShareDetail {
+  display: none;
+}
+
 .sideBarDiv {
   padding: 0;
 }
