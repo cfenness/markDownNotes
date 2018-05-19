@@ -124,7 +124,7 @@ var createNewTaskElement=function(taskString){
 	var listItem=document.createElement("li");
 
 	//input (checkbox)
-	var checkBox=document.createElement("input");//checkbx
+	var checkBox=document.createElement("input");//checkbox
 	//label
 	var label=document.createElement("label");//label
 	//input (text)
@@ -196,7 +196,7 @@ var containsClass=listItem.classList.contains("editMode");
 
 		//toggle .editmode on the parent.
 		listItem.classList.toggle("editMode");
-}
+};
 
 
 
