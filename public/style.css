@@ -1,14 +1,25 @@
-/* public/style.css */
-
 html, body, section, .full-height {
   height: 100%;
   font-family: 'Poppins', sans-serif;
 } 
 
+.navbar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  background-color: rgb(255, 102, 0);
+  color: white;
+  text-align: center;
+  z-index: 1;
+}
+
+.navbar-brand {
+  color: white;
+}
+
 #pad{
   outline: none;
-  -webkit-box-shadow: none;
-  -moz-box-shadow: none;
   box-shadow: none;
   width: 100%;
   min-height: 100px;
@@ -17,13 +28,22 @@ html, body, section, .full-height {
   margin-bottom: 0.5%;
   margin-top: 0.5%;
   resize: vertical;
-  overflow: auto;
+  overflow-y: auto;
   right: 0%;
   font-family: 'Gloria Hallelujah', cursive;
+  color: rgb(112, 128, 144);
+  border-color: rgb(0, 0, 0);
   padding-left: 0.5%;
   padding-top: 0.5%;
   padding-right: 0.5%;
   padding-bottom: 0.5%;
+}
+
+.button {
+  background-color: transparent;
+  border-color: rgb(0, 0, 0);
+  border-radius: 10%;
+  cursor: pointer;
 }
 
 #markdown {
@@ -43,26 +63,257 @@ html, body, section, .full-height {
 }
 
 .sideBar {
-  width: 100%;
-  height: 700px;
-  margin-left: 5%;
+  width: 15%;
+  height: 85%;
+  margin-left: 0.5%;
   border: solid;
   padding: 0;
+  position: fixed;
+  left: 0;
+  top: 8%;
+  overflow: scroll;
 }
-.notesTab {
+.sideBarTab {
   width: 95%;
-  margin: auto;
+  margin-left: 2.5%;
   margin-top: 1%;
   border: solid;
   text-align: center;
 }
-.recipeBox {
+
+.sidebarDetail {
   width: 95%;
+  height: 20%;
   margin: auto;
-  margin-top: 1%;
-  border: solid;
+  border-left: solid;
+  border-right: solid;
+  border-bottom: solid;
   text-align: center;
 }
+
+.notesDetail {
+  display: none;
+}
+
+.recipeDetail {
+  display: none;
+}
+
+.calendarDetail {
+  display: none;
+}
+
+.chatDetail {
+  display: none;
+}
+
+.screenshareDetail {
+  display: none;
+}
+
+.musicDetail {
+  display: none;
+}
+
+.flashcardsDetail {
+  display: none;
+}
+
+.youtubeDetail {
+  display: none;
+}
+
+.githubDetail {
+  display: none;
+}
+
+.presentationDetail {
+  display: none;
+}
+
+.stickynotesDetail {
+  display: none;
+}
+
 .sideBarDiv {
   padding: 0;
 }
+
+.noteBook {
+  top: 8%;
+}
+
+.editButton {
+  position: absolute; 
+  right: 4.3%;
+}
+
+.downloadButton {
+  position: absolute; 
+  right: 6.8%;
+}
+
+.addDiv {
+  position: absolute; 
+  right: 0;
+}
+
+.addTab {
+  position: fixed;
+  right: 8%;
+}
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: rgb(255, 102, 0);
+  color: white;
+  text-align: center;
+}
+
+#table {
+  font-size: 11px;
+  overflow: scroll;
+  border: solid;
+}
+
+.toDo {
+  display: block;
+  width: 400px;
+  margin-top: 0.5%;
+  border: solid;
+  padding-left: 1%;
+  font-size: 10px;
+  padding-right: 1%;
+  padding-bottom: 1%;
+  max-height: 250px;
+  overflow: scroll;
+}
+
+.toDoHeader {
+  padding-top: 1%;
+  font-size: 18px;
+  margin-bottom: 1%;
+}
+
+.completedHeader {
+  padding-top: 1%;
+  font-size: 18px;
+  margin-bottom: 1%;
+}
+
+.toDoButtons {
+  float: right;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+li * {
+  float: left;
+  padding-top: 1%;
+  vertical-align: baseline;
+}
+
+li, h3 {
+  clear:both;
+  list-style:none;
+}
+input, button {
+  outline: none;
+}
+
+button:hover {
+  color: #333;
+}
+/* Heading */
+.new-task {
+  padding-top: 2%;
+}
+
+h3,
+label[for='new-task'] {
+  color: #333;
+  font-weight: 700;
+  padding: 30px 0 10px;
+  margin: 0;
+  text-transform: uppercase;
+}
+input[type="text"] {
+  margin: 0;
+  margin-top: 1%;
+  line-height: 18px;
+  height: 18px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  background: transparent;
+  border-radius: 6px;
+  color: #888;
+  width: 400;
+}
+input[type="text"]:focus {
+  color: #333;
+}
+
+.addToDo {
+  margin-top: 1%;
+  float: right;
+}
+
+/* New Task */
+label[for='new-task'] {
+  display: block;
+  padding-top: 2%;
+}
+input#new-task {
+  float: left;
+  width: 75%;
+}
+p > button:hover {
+  color: #0FC57C;
+}
+
+/* Task list */
+li {
+  overflow: hidden;
+  border-bottom: 1px solid #eee;
+}
+li > input[type="checkbox"] {
+  margin: 0 10px;
+  position: relative;
+  top: 15px;
+}
+li > label {
+  width: 237px;
+  vertical-align: middle;
+}
+li >  input[type="text"] {
+  width: 226px;
+}
+li > .delete:hover {
+  color: #CF2323;
+}
+
+/* Completed */
+#completed-tasks label {
+  text-decoration: line-through;
+  color: #888;
+}
+
+/* Edit Task */
+ul li input[type=text] {
+  display:none;
+}
+
+ul li.editMode input[type=text] {
+  display:block;
+}
+
+ul li.editMode label {
+  display:none;
+}
+
+

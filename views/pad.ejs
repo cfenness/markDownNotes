@@ -2,98 +2,206 @@
 <html>
 <head>
     <title>Notetaker</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jexcel/1.5.0/css/jquery.jexcel.min.css" type="text/css" />
     <link href="https://fonts.googleapis.com/css?family=Merriweather|Poppins" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
-    <link href="style.css" rel="stylesheet">
+    <link href="./style.css" rel="stylesheet">
+
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/numeral.js/2.0.6/numeral.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-csv/0.8.3/jquery.csv.min.js"></script>
+    <script src="http://cdn.bossanova.uk/js/excel-formula.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jexcel/1.5.0/js/jquery.jexcel.js"></script>
 
 </head>
 
 <body class="container-fluid">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg">
         <a class="navbar-brand" href="#">Notetaker</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
+        <!--Toggle-->
+        <button class="editButton button" data-toggle="popover" data-trigger="hover" data-content="Edit Page" data-placement="bottom" onclick="toggleByClass('display');">
+          <i class="far fa-edit"></i>
+        </button>
+        <button class="downloadButton button" data-toggle="popover" data-trigger="hover" data-content="Download" data-placement="left">
+            <i class="fas fa-arrow-circle-down"></i>
+          </button>
+      </div>
       </nav>
 
-<br />
-
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-3">
-          <div class="sideBar">
-              <div class="notesTab">Notes</div>
-              <div class="recipeBox">Recipe Box</div>
+      <div class="full-height row">
+        <div class="col-lg-2">
+          <div class="full-height sideBar">
+              <button class="notesTab sideBarTab" onclick="toggleByClass('noteBook')">Notes</button>
+              <button class="recipeBox sideBarTab" onclick="toggleByClass('recipeDetail')">Recipe Box</button>
+              <div class="sidebarDetail recipeDetail">Recipe Box</div>
+              <button class="recipeBox sideBarTab" onclick="toggleByClass('calendarDetail')">Calendar</button>
+              <button class="recipeBox sideBarTab" onclick="toggleByClass('chatDetail')">Chat</button>
+              <div class="sidebarDetail chatDetail">Chat Box</div>
+              <button class="recipeBox sideBarTab" onclick="toggleByClass('screenshareDetail')">Screenshare</button>
+              <div class="sidebarDetail screenshareDetail">Screenshare Box</div>
+              <button class="recipeBox sideBarTab" onclick="toggleByClass('musicDetail')">Music</button>
+              <button class="recipeBox sideBarTab" onclick="toggleByClass('flashcardsDetail')">Flash Cards</button>
+              <div class="sidebarDetail flashcardsDetail">Flash Cards Box</div>
+              <button class="recipeBox sideBarTab" onclick="toggleByClass('youtubeDetail')">Youtube Player</button>
+              <button class="recipeBox sideBarTab" onclick="toggleByClass('githubDetail')">Github Searcher</button>
+              <div class="sidebarDetail githubDetail">Github Box</div>
+              <button class="recipeBox sideBarTab" onclick="toggleByClass('presentationDetail')">Presentations (Reveal JS)</button>
+              <div class="sidebarDetail presentationDetail">Presentations Box</div>
+              <button class="recipeBox sideBarTab" onclick="toggleByClass('stickynotesDetail')">Sticky Notes</button>
+              <div class="sidebarDetail stickynotesDetail">Sticky Notes Box</div>
             </div>
         </div>
-        <div class="col-lg-9">
+        <div class="col-lg-9 noteBook">
+            <ul class="nav nav-tabs">
+                <li class="nav-item">
+                  <a class="nav-link active" href="#">Active</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Link</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link addTab" href="#">
+                        <i class="fas fa-plus"></i>
+                    </a>
+                  </li>
+              </ul>
+          <br />
           <div class="row toolBar">
             <!--Undo-->                
-            <button class="textButton" onclick="underline()">
+            <button class="textButton button" onclick="underline()">
               <i class="fas fa-undo"></i>
             </button>
             <!--Redo-->                
-            <button class="textButton" onclick="underline()">
+            <button class="textButton button" onclick="underline()">
               <i class="fas fa-redo"></i>
             </button>
             <!--Bold-->                
-            <button class="textButton" onclick="underline()">
+            <button class="textButton button" onclick="underline()">
               <i class="fas fa-bold"></i>
             </button>
             <!--Italics-->                
-            <button class="textButton" onclick="underline()">
+            <button class="textButton button" onclick="underline()">
               <i class="fas fa-italic"></i>
             </button>
             <!--Underline-->                
-            <button class="textButton" onclick="underline()">
+            <button class="textButton button" onclick="underline()">
               <i class="fas fa-underline"></i>
             </button>
             <!--Align Left-->                
-            <button class="textButton" onclick="underline()">
+            <button class="textButton button" onclick="underline()">
               <i class="fas fa-align-left"></i>
             </button>
             <!--Align Center-->                
-            <button class="textButton" onclick="underline()">
+            <button class="textButton button" onclick="underline()">
               <i class="fas fa-align-center"></i>
             </button>
             <!--Align Right-->                
-            <button class="textButton" onclick="underline()">
+            <button class="textButton button" onclick="underline()">
               <i class="fas fa-align-right"></i>
             </button>
             <!--Link-->
-            <button class="textButton" onclick="link()">
+            <button class="textButton button" onclick="link()">
               <i class="fas fa-link"></i>
             </button>
-            <!--Show HTML-->
-            <button class="textButton" onclick="displayhtml()">
-              <i class="fas fa-code"></i>
-            </button>
             <!--Clear HTML-->
-            <button class="textButton" onclick="displayhtml()">
+            <button class="textButton button" onclick="displayhtml()">
               <i class="fas fa-times"></i>
             </button>
-            <!--Toggle-->
-            <button onclick="toggleByClass('display');">Toggle</button>
+            <div class="addDiv">
+            <button class="textButton addText  button" id="addText" data-toggle="popover" data-trigger="hover" data-content="New Text Box" data-placement="bottom">
+              <i class="fas fa-plus-square"></i>
+            </button>
+            <button class="textButton addGraph  button" id="addGraph" data-toggle="popover" data-trigger="hover" data-content="New Graph" data-placement="bottom">
+              <i class="fas fa-chart-bar"></i>
+            </button>
+            <button class="textButton addTable  button" id="addTable" data-toggle="popover" data-trigger="hover" data-content="New Table" data-placement="bottom">
+              <i class="fas fa-table"></i>
+            </button>
+            <button class="textButton addCodeBlock  button" id="addCodeBlock" data-toggle="popover" data-trigger="hover" data-content="New Code Block" data-placement="bottom">
+              <i class="fas fa-code"></i>
+            </button>
+            <button class="textButton addToDo  button" id="addToDo" data-toggle="popover" data-trigger="hover" data-content="New To Do List" data-placement="bottom">
+                <i class="far fa-check-square"></i>
+              </button>
           </div>
+          </div>
+          
+          <!--To Do List -->
+          <div class="row toDo">
+          <div class="col-lg-4">
+            <p class="toDoHeader">Todo</p>
+            <p>
+              <input class="new-task" id="new-task" type="text" placeholder="Add New Item...">
+              <button class="button addToDo">
+                  <i class="fas fa-plus"></i>
+              </button>
+            </p>
+              
+
+            <ul id="incomplete-tasks">
+              <li class="toDoTask"><input type="checkbox"><label>Pay Bills</label><input type="text">
+                <div class="toDoButtons">
+                    <button class="edit button">
+                        <i class="far fa-edit"></i>
+                    </button>
+                    <button class="delete button">
+                        <i class="far fa-trash-alt"></i>
+                    </button>
+                </div>
+              </li>
+              <li class="editMode"><input type="checkbox"><label>Go Shopping</label><input type="text" value="Go Shopping">
+                <div class="toDoButtons">
+                  <button class="edit button">
+                      <i class="far fa-edit"></i>
+                  </button>
+                  <button class="delete button">
+                      <i class="far fa-trash-alt"></i>
+                  </button>
+              </div>
+              </li>
+              
+            </ul>
+            
+            <ul id="completed-tasks">
+              <li><input type="checkbox" checked><label>See the Doctor</label><input type="text">
+                <div class="toDoButtons">
+                    <button class="edit button">
+                        <i class="far fa-edit"></i>
+                    </button>
+                    <button class="delete button">
+                        <i class="far fa-trash-alt"></i>
+                    </button>
+                </div>
+              </li>
+            </ul>
+          </div>
+          </div>
+
+          <!--Markdown -->
           <div class="row">
-              <textarea class="full-height display" placeholder="Write markdown text here..." id="pad"></textarea>
-              <div class="full-height display" id="markdown"></div>
+            <textarea class="full-height display autoExpand" placeholder="Write markdown text here..." id="pad"></textarea>
+            <div class="full-height display" id="markdown"></div>
           </div>
       </div>
       </div>
-  </div>
+
+      <div class="footer">
+        <p>Footer</p>
+      </div>
 
     <script src="https://cdn.rawgit.com/showdownjs/showdown/1.0.2/dist/showdown.min.js"></script>
     <script src="/channel/bcsocket.js"></script>
     <script src="/share/share.uncompressed.js"></script>
     <script src="/share/textarea.js"></script>
-    <script src="script.js"></script>
+    <script src="./script.js"></script>
 
 </body>
 </html>
