@@ -74,19 +74,22 @@ html, body, section, .full-height {
   overflow: scroll;
 }
 .sideBarTab {
-  width: 95%;
-  margin-left: 2.5%;
+  width: 100%;
   margin-top: 1%;
-  border: solid;
+  border-top: solid;
+  border-bottom: solid;
   text-align: center;
 }
 
+.notesTab {
+  margin-top: 0;
+  border-top: none;
+}
+
 .sidebarDetail {
-  width: 95%;
+  width: 100%;
   height: 20%;
   margin: auto;
-  border-left: solid;
-  border-right: solid;
   border-bottom: solid;
   text-align: center;
 }
@@ -95,7 +98,7 @@ html, body, section, .full-height {
   display: none;
 }
 
-.recipeDetail {
+.codeDetail {
   display: none;
 }
 
@@ -139,6 +142,10 @@ html, body, section, .full-height {
   display: none;
 }
 
+.socialMediaDetail {
+  display: none;
+}
+
 .sideBarDiv {
   padding: 0;
 }
@@ -155,6 +162,11 @@ html, body, section, .full-height {
 .downloadButton {
   position: absolute; 
   right: 6.8%;
+}
+
+.publishButton {
+  position: absolute; 
+  right: 9.1%;
 }
 
 .addDiv {

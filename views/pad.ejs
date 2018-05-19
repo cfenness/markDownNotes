@@ -26,13 +26,16 @@
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
+        <button class="publishButton button" data-toggle="popover" data-trigger="hover" data-content="Publish" data-placement="left">
+            <i class="fas fa-cloud-upload-alt"></i>
+        </button>
         <!--Toggle-->
         <button class="editButton button" data-toggle="popover" data-trigger="hover" data-content="Edit Page" data-placement="bottom" onclick="toggleByClass('display');">
           <i class="far fa-edit"></i>
         </button>
-        <button class="downloadButton button" data-toggle="popover" data-trigger="hover" data-content="Download" data-placement="left">
+        <button class="downloadButton button" data-toggle="popover" data-trigger="hover" data-content="Download" data-placement="bottom">
             <i class="fas fa-arrow-circle-down"></i>
-          </button>
+        </button>
       </div>
       </nav>
 
@@ -40,8 +43,8 @@
         <div class="col-lg-2">
           <div class="full-height sideBar">
               <button class="notesTab sideBarTab" onclick="toggleByClass('noteBook')">Notes</button>
-              <button class="recipeBox sideBarTab" onclick="toggleByClass('recipeDetail')">Recipe Box</button>
-                <div class="sidebarDetail recipeDetail">Recipe Box</div>
+              <button class="recipeBox sideBarTab" onclick="toggleByClass('codeDetail')">Code Box</button>
+                <div class="sidebarDetail codeDetail">Code Box</div>
               <button class="recipeBox sideBarTab" onclick="toggleByClass('calendarDetail')">Calendar</button>
               <button class="recipeBox sideBarTab" onclick="toggleByClass('chatDetail')">Chat</button>
                 <div class="sidebarDetail chatDetail">Chat Box</div>
@@ -59,6 +62,8 @@
                 <div class="sidebarDetail stickynotesDetail">Sticky Notes Box</div>
               <button class="recipeBox sideBarTab" onclick="toggleByClass('fileShareDetail')">File Sharing</button>
                 <div class="sidebarDetail fileShareDetail">Fileshare Box</div>
+              <button class="recipeBox sideBarTab" onclick="toggleByClass('socialMediaDetail')">Social Media App</button>
+                <div class="sidebarDetail socialMediaDetail">Social Media Box</div>
             </div>
         </div>
         <div class="col-lg-9 noteBook">
