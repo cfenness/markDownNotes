@@ -189,7 +189,8 @@ html, body, section, .full-height {
   padding-right: 1%;
   padding-bottom: 1%;
   padding-top: 1%;
-  max-height: 250px;
+  min-height: 150px;
+  max-height: 400px;
   overflow: scroll;
 }
 
@@ -252,7 +253,7 @@ input[type="text"] {
   background: transparent;
   border-radius: 6px;
   color: #888;
-  width: 400;
+  width: 80%;
 }
 input[type="text"]:focus {
   color: #333;
@@ -270,7 +271,7 @@ label[for='new-task'] {
 }
 input#new-task {
   float: left;
-  width: 85%;
+  width: 90%;
 }
 p > button:hover {
   color: #0FC57C;
@@ -285,15 +286,16 @@ li {
 li > input[type="checkbox"] {
   margin: 0 10px;
   position: relative;
-  top: 7px;
+  top: 10px;
 }
 li > label {
   width: 237px;
-  margin-top: 1%;
+  margin-top: 2%;
   top: 7px;
+  padding-left: 3%;
 }
 li >  input[type="text"] {
-  width: 77%;
+  width: 75%;
   margin-bottom: 1%;
 }
 li > .delete:hover {
@@ -321,12 +323,15 @@ ul li.editMode label {
 
 .edit {
   float: right;
-  margin-top: 1%;
+  margin-top: 2%;
+  border-radius: 10%;
 }
 
 .delete {
   float: right;
-  margin-top: 1%;
+  margin-top: 2%;
+  margin-right: 0.5%;
+  border-radius: 10%;
 }
 
 .newTask {
