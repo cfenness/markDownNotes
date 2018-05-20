@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Notetaker</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jexcel/1.5.0/css/jquery.jexcel.min.css" type="text/css" />
@@ -36,160 +37,159 @@
         <button class="downloadButton button" data-toggle="popover" data-trigger="hover" data-content="Download" data-placement="bottom">
             <i class="fas fa-arrow-circle-down"></i>
         </button>
-      </div>
-      </nav>
+        </div>
+    </nav>
 
-      <div class="full-height row">
+    <div class="row bodyDiv">
         <div class="col-lg-2">
-          <div class="full-height sideBar">
-              <button class="notesTab sideBarTab" onclick="toggleByClass('noteBook')">Notes</button>
-              <button class="recipeBox sideBarTab" onclick="toggleByClass('codeDetail')">Code Box</button>
+            <div class="full-height sideBar">
+                <button class="notesTab sideBarTab" onclick="toggleByClass('noteBook')">Notes</button>
+                <button class="recipeBox sideBarTab" onclick="toggleByClass('codeDetail')">Code Box</button>
                 <div class="sidebarDetail codeDetail">Code Box</div>
-              <button class="recipeBox sideBarTab" onclick="toggleByClass('calendarDetail')">Calendar</button>
-              <button class="recipeBox sideBarTab" onclick="toggleByClass('chatDetail')">Chat</button>
+                <button class="recipeBox sideBarTab" onclick="toggleByClass('calendarDetail')">Calendar</button>
+                <button class="recipeBox sideBarTab" onclick="toggleByClass('chatDetail')">Chat</button>
                 <div class="sidebarDetail chatDetail">Chat Box</div>
-              <button class="recipeBox sideBarTab" onclick="toggleByClass('screenshareDetail')">Screenshare</button>
+                <button class="recipeBox sideBarTab" onclick="toggleByClass('screenshareDetail')">Screenshare</button>
                 <div class="sidebarDetail screenshareDetail">Screenshare Box</div>
-              <button class="recipeBox sideBarTab" onclick="toggleByClass('musicDetail')">Music</button>
-              <button class="recipeBox sideBarTab" onclick="toggleByClass('flashcardsDetail')">Flash Cards</button>
+                <button class="recipeBox sideBarTab" onclick="toggleByClass('musicDetail')">Music</button>
+                <button class="recipeBox sideBarTab" onclick="toggleByClass('flashcardsDetail')">Flash Cards</button>
                 <div class="sidebarDetail flashcardsDetail">Flash Cards Box</div>
-              <button class="recipeBox sideBarTab" onclick="toggleByClass('youtubeDetail')">Youtube Player</button>
-              <button class="recipeBox sideBarTab" onclick="toggleByClass('githubDetail')">Github Searcher</button>
+                <button class="recipeBox sideBarTab" onclick="toggleByClass('youtubeDetail')">Youtube Player</button>
+                <button class="recipeBox sideBarTab" onclick="toggleByClass('githubDetail')">Github Searcher</button>
                 <div class="sidebarDetail githubDetail">Github Box</div>
-              <button class="recipeBox sideBarTab" onclick="toggleByClass('presentationDetail')">Reveal JS</button>
+                <button class="recipeBox sideBarTab" onclick="toggleByClass('presentationDetail')">Reveal JS</button>
                 <div class="sidebarDetail presentationDetail">Presentations Box</div>
-              <button class="recipeBox sideBarTab" onclick="toggleByClass('stickynotesDetail')">Sticky Notes</button>
+                <button class="recipeBox sideBarTab" onclick="toggleByClass('stickynotesDetail')">Sticky Notes</button>
                 <div class="sidebarDetail stickynotesDetail">Sticky Notes Box</div>
-              <button class="recipeBox sideBarTab" onclick="toggleByClass('fileShareDetail')">File Sharing</button>
+                <button class="recipeBox sideBarTab" onclick="toggleByClass('fileShareDetail')">File Sharing</button>
                 <div class="sidebarDetail fileShareDetail">Fileshare Box</div>
-              <button class="recipeBox sideBarTab" onclick="toggleByClass('socialMediaDetail')">Social Media App</button>
+                <button class="recipeBox sideBarTab" onclick="toggleByClass('socialMediaDetail')">Social Media App</button>
                 <div class="sidebarDetail socialMediaDetail">Social Media Box</div>
             </div>
         </div>
         <div class="col-lg-9 noteBook">
             <ul class="nav nav-tabs">
                 <li class="nav-item">
-                  <a class="nav-link active" href="#">Active</a>
+                    <a class="nav-link active" href="#">Active</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">Link</a>
+                    <a class="nav-link" href="#">Link</a>
                 </li>
-              </ul>
-          <br />
-          <div class="row toolBar">
-            <!--Undo-->                
-            <button class="textButton button" onclick="underline()">
+            </ul>
+            <br />
+            <div class="row toolBar">
+                <!--Undo-->
+                <button class="textButton button" onclick="underline()">
               <i class="fas fa-undo"></i>
             </button>
-            <!--Redo-->                
-            <button class="textButton button" onclick="underline()">
+                <!--Redo-->
+                <button class="textButton button" onclick="underline()">
               <i class="fas fa-redo"></i>
             </button>
-            <!--Bold-->                
-            <button class="textButton button" onclick="underline()">
+                <!--Bold-->
+                <button class="textButton button" onclick="underline()">
               <i class="fas fa-bold"></i>
             </button>
-            <!--Italics-->                
-            <button class="textButton button" onclick="underline()">
+                <!--Italics-->
+                <button class="textButton button" onclick="underline()">
               <i class="fas fa-italic"></i>
             </button>
-            <!--Underline-->                
-            <button class="textButton button" onclick="underline()">
+                <!--Underline-->
+                <button class="textButton button" onclick="underline()">
               <i class="fas fa-underline"></i>
             </button>
-            <!--Align Left-->                
-            <button class="textButton button" onclick="underline()">
+                <!--Align Left-->
+                <button class="textButton button" onclick="underline()">
               <i class="fas fa-align-left"></i>
             </button>
-            <!--Align Center-->                
-            <button class="textButton button" onclick="underline()">
+                <!--Align Center-->
+                <button class="textButton button" onclick="underline()">
               <i class="fas fa-align-center"></i>
             </button>
-            <!--Align Right-->                
-            <button class="textButton button" onclick="underline()">
+                <!--Align Right-->
+                <button class="textButton button" onclick="underline()">
               <i class="fas fa-align-right"></i>
             </button>
-            <!--Link-->
-            <button class="textButton button" onclick="link()">
+                <!--Link-->
+                <button class="textButton button" onclick="link()">
               <i class="fas fa-link"></i>
             </button>
-            <!--Clear HTML-->
-            <button class="textButton button" onclick="displayhtml()">
+                <!--Clear HTML-->
+                <button class="textButton button" onclick="displayhtml()">
               <i class="fas fa-times"></i>
             </button>
-            <div class="addDiv">
-            <button class="textButton addText  button" id="addText" data-toggle="popover" data-trigger="hover" data-content="New Text Box" data-placement="bottom">
+                <div class="addDiv">
+                    <button class="textButton addText  button" id="addText" data-toggle="popover" data-trigger="hover" data-content="New Text Box" data-placement="bottom">
               <i class="fas fa-plus-square"></i>
             </button>
-            <button class="textButton addGraph  button" id="addGraph" data-toggle="popover" data-trigger="hover" data-content="New Graph" data-placement="bottom">
+                    <button class="textButton addGraph  button" id="addGraph" data-toggle="popover" data-trigger="hover" data-content="New Graph" data-placement="bottom">
               <i class="fas fa-chart-bar"></i>
             </button>
-            <button class="textButton addTable  button" id="addTable" data-toggle="popover" data-trigger="hover" data-content="New Table" data-placement="bottom">
+                    <button class="textButton addTable  button" id="addTable" data-toggle="popover" data-trigger="hover" data-content="New Table" data-placement="bottom">
               <i class="fas fa-table"></i>
             </button>
-            <button class="textButton addCodeBlock  button" id="addCodeBlock" data-toggle="popover" data-trigger="hover" data-content="New Code Block" data-placement="bottom">
+                    <button class="textButton addCodeBlock  button" id="addCodeBlock" data-toggle="popover" data-trigger="hover" data-content="New Code Block" data-placement="bottom">
               <i class="fas fa-code"></i>
             </button>
-            <button class="textButton addToDoList  button" id="addToDo" data-toggle="popover" data-trigger="hover" data-content="New To Do List" data-placement="bottom">
+                    <button class="textButton addToDoList  button" id="addToDo" data-toggle="popover" data-trigger="hover" data-content="New To Do List" data-placement="bottom">
                 <i class="far fa-check-square"></i>
               </button>
-          </div>
-          </div>
-          
-          <!--To Do List -->
-          <div class="row toDo">
-            <p class="newTask">
-              <input class="new-task" id="new-task" type="text" placeholder="Add New To Do List Item...">
-              <button class="button addToDo">
-                  <i class="fas fa-plus"></i>
-              </button>
-            </p>
-              
+                </div>
+            </div>
 
-            <ul id="incomplete-tasks">
-              <li class="toDoTask"><input type="checkbox"><label>Pay Bills</label><input type="text">
-                    <button class="edit button">
+            <!--To Do List -->
+            <div class="row toDoList">
+                <div class="col-lg-4 toDoCol">
+                    <div class="toDo">
+                        <p class="newTask">
+                            <input class="new-task" id="new-task" type="text" placeholder="Add New To Do List Item...">
+                            <button class="button addToDo">
+                      <i class="fas fa-plus"></i>
+                    </button>
+                        </p>
+
+
+                        <ul id="incomplete-tasks">
+                            <li class="toDoTask"><input type="checkbox"><label>Pay Bills</label><input type="text">
+                                <button class="edit button">
                         <i class="far fa-edit"></i>
                     </button>
-                    <button class="delete button">
+                                <button class="delete button">
                         <i class="far fa-trash-alt"></i>
                     </button>
-              </li>
-              <li class="editMode"><input type="checkbox"><label>Go Shopping</label><input type="text" value="Go Shopping">
-                  <button class="edit button">
+                            </li>
+                            <li class="editMode"><input type="checkbox"><label>Go Shopping</label><input type="text" value="Go Shopping">
+                                <button class="edit button">
                       <i class="far fa-edit"></i>
                   </button>
-                  <button class="delete button">
+                                <button class="delete button">
                       <i class="far fa-trash-alt"></i>
                   </button>
-              </li>
-              
-            </ul>
-            
-            <ul id="completed-tasks">
-              <li><input type="checkbox" checked><label>See the Doctor</label><input type="text">
-                    <button class="edit button">
+                            </li>
+
+                        </ul>
+
+                        <ul id="completed-tasks">
+                            <li><input type="checkbox" checked><label>See the Doctor</label><input type="text">
+                                <button class="edit button">
                         <i class="far fa-edit"></i>
                     </button>
-                    <button class="delete button">
+                                <button class="delete button">
                         <i class="far fa-trash-alt"></i>
                     </button>
-              </li>
-            </ul>
-          </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
 
-
-          <!--Markdown -->
-          <div class="row">
-            <textarea class="full-height display autoExpand" placeholder="Write markdown text here..." id="pad"></textarea>
-            <div class="full-height display" id="markdown"></div>
-          </div>
-      </div>
-      </div>
-
-      <div class="footer">
-        <p>Footer</p>
-      </div>
+            <!--Markdown -->
+            <div class="row">
+                <textarea class="display autoExpand" placeholder="Write markdown text here..." id="pad"></textarea>
+                <div class="display" id="markdown"></div>
+            </div>
+        </div>
+    </div>
 
     <script src="https://cdn.rawgit.com/showdownjs/showdown/1.0.2/dist/showdown.min.js"></script>
     <script src="/channel/bcsocket.js"></script>
@@ -198,4 +198,5 @@
     <script src="./script.js"></script>
 
 </body>
+
 </html>

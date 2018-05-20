@@ -97,6 +97,17 @@ $(document).ready(function(){
     });
 });
 
+
+
+//Add To Do List
+    //Generate Textbox
+    $(document).ready(function(){
+        $("#addToDo").click(function(){
+            $(".toDoList").append("<div class='col-lg-4 toDoCol'><div class='toDo'><p class='newTask'><input class='new-task' id='new-task' type='text' placeholder='Add New To Do List Item...'><button class='button addToDo'><i class='fas fa-plus'></i></button></p><ul id='incomplete-tasks'><li class='toDoTask'><input type='checkbox'><label>Pay Bills</label><input type='text'><button class='edit button'><i class='far fa-edit'></i></button><button class='delete button'><i class='far fa-trash-alt'></i></button></li><li class='editMode'><input type='checkbox'><label>Go Shopping</label><input type='text' value='Go Shopping'><button class='edit button'><i class='far fa-edit'></i></button><button class='delete button'><i class='far fa-trash-alt'></i></button></li></ul><ul id='completed-tasks'><li><input type='checkbox' checked><label>See the Doctor</label><input type='text'><button class='edit button'><i class='far fa-edit'></i></button><button class='delete button'><i class='far fa-trash-alt'></i></button></li></ul></div></div>"
+            );
+        });
+    });
+
 //Auto Expand MarkDown TextBox
 $(document)
     .one('focus.autoExpand', 'textarea.autoExpand', function(){
@@ -281,4 +292,5 @@ var bindTaskEvents=function(taskListItem,checkBoxEventHandler){
 	for (var i=0; i<completedTasksHolder.children.length;i++){
 	//bind events to list items chldren(tasksIncompleted)
 		bindTaskEvents(completedTasksHolder.children[i],taskIncomplete);
-	}
+    }
+
